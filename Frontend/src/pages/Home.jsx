@@ -72,7 +72,7 @@ export default function Home() {
     setSocketError(null)
     setSocketConnected(false)
 
-    const socket = io('http://localhost:3000', {
+    const socket = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:3000', {
       auth: { token },
       transports: ['websocket', 'polling']
     })
